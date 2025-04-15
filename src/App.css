@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Arima:wght@100..700&family=Freehand&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  /* padding: 0; */
+  /* margin: 0; */
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: "Poppins", "Open Sans", serif;
+}
+
+.main {
+  background-color: rgba(255, 255, 255, 0.708);
+  backdrop-filter: blur(5rem);
+}
+
+/* Ensure the background fills the viewport */
+.background {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.box {
+  position: absolute;
+  border-radius: 8px;
+  animation: float 8s infinite ease-in-out;
+  opacity: 0.8;
+  /* Slightly transparent */
+}
+
+/* Floating animation for boxes */
+@keyframes float {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.8;
+  }
+
+  50% {
+    transform: translate(50px, -100px) scale(1.2);
+    opacity: 0.9;
+  }
+
+  100% {
+    transform: translate(-50px, 100px) scale(1);
+    opacity: 0.8;
+  }
+}
+
+.main-theme-color {
+  color: #ff8800;
+}
+
+.main-theme-bg-color {
+  background: #ff8800;
+}
+
+.overlay {
+  background: #000000b7;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+}
+
+/* styled scrollbar  */
+.styled-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.styled-scrollbar::-webkit-scrollbar-track {
+  cursor: pointer;
+  background: transparent;
+}
+
+.styled-scrollbar::-webkit-scrollbar-thumb {
+  background: #7d7d7de0;
+  border-radius: 5px;
+}
+
+.styled-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #6c6c6caf;
+}
