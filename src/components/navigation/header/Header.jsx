@@ -9,7 +9,7 @@ import { useAuthContext } from "../../../context/AuthContext";
 const Header = () => {
   // states
   // get path
-  const { currentPath, setCurrentPath } = useAuthContext();
+  const { currentPath, setCurrentPath, backendBaseURL } = useAuthContext();
   const [isSideBar, setIsSideBar] = useState(false);
 
   // useEffects
@@ -202,7 +202,7 @@ const Header = () => {
                 <div className="sm:w-[50%] h-full sm:flex hidden">
                   {/* image  */}
                   <img
-                    src="http://localhost:5000/images/Hero_sections__doctor-svg_336282 1.svg"
+                    src={`${backendBaseURL}/images/Hero_sections__doctor-svg_336282 1.svg"`}
                     alt="hero_image"
                     className="min-[915px]:object-contain object-cover object-left drop-shadow-xl"
                   />

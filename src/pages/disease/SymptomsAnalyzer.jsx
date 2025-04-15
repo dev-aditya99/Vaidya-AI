@@ -12,7 +12,7 @@ const SymptomsAnalyzer = () => {
   const navigate = useNavigate();
 
   // context
-  const { setGeminiResponse, geoLocation } = useAuthContext();
+  const { setGeminiResponse, geoLocation, backendBaseURL } = useAuthContext();
 
   // states
   const [isLoader, setIsLoader] = useState(false);
@@ -32,7 +32,7 @@ const SymptomsAnalyzer = () => {
       setIsLoader(true);
 
       axios
-        .post("http://localhost:5000/disease/symptoms-analyzer", formData)
+        .post(backendBaseURL + "disease/symptoms-analyzer", formData)
         .then((success) => {
           setGeminiResponse(success.data.response);
           localStorage.setItem(

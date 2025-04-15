@@ -12,7 +12,7 @@ const FindFirstAid = () => {
   const navigate = useNavigate();
 
   // context
-  const { setGeminiResponse, geoLocation } = useAuthContext();
+  const { setGeminiResponse, geoLocation, backendBaseURL } = useAuthContext();
 
   // states
   const [isLoader, setIsLoader] = useState(false);
@@ -32,7 +32,7 @@ const FindFirstAid = () => {
       setIsLoader(true);
 
       axios
-        .post("http://localhost:5000/disease/first-aid", formData)
+        .post(backendBaseURL + "disease/first-aid", formData)
         .then((success) => {
           setGeminiResponse(success.data.response);
           localStorage.setItem(

@@ -15,7 +15,7 @@ const ScanDisease = () => {
   const navigate = useNavigate();
 
   // context
-  const { setGeminiResponse, geoLocation } = useAuthContext();
+  const { setGeminiResponse, geoLocation, backendBaseURL } = useAuthContext();
 
   // states
   const [isLoader, setIsLoader] = useState(false);
@@ -45,7 +45,7 @@ const ScanDisease = () => {
       const toastLoading = toast.loading("Scanning Image....");
       setIsLoader(true);
       axios
-        .post("http://localhost:5000/disease/scan-disease", formData)
+        .post(backendBaseURL + "disease/scan-disease", formData)
         .then((success) => {
           setGeminiResponse(success.data.response);
           localStorage.setItem(
