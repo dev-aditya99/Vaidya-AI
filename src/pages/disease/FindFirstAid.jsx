@@ -32,7 +32,7 @@ const FindFirstAid = () => {
       setIsLoader(true);
 
       axios
-        .post(backendBaseURL + "disease/first-aid", formData)
+        .post(backendBaseURL + "/disease/first-aid", formData)
         .then((success) => {
           setGeminiResponse(success.data.response);
           localStorage.setItem(

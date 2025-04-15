@@ -45,7 +45,7 @@ const ScanDisease = () => {
       const toastLoading = toast.loading("Scanning Image....");
       setIsLoader(true);
       axios
-        .post(backendBaseURL + "disease/scan-disease", formData)
+        .post(backendBaseURL + "/disease/scan-disease", formData)
         .then((success) => {
           setGeminiResponse(success.data.response);
           localStorage.setItem(

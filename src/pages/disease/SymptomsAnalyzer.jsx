@@ -32,7 +32,7 @@ const SymptomsAnalyzer = () => {
       setIsLoader(true);
 
       axios
-        .post(backendBaseURL + "disease/symptoms-analyzer", formData)
+        .post(backendBaseURL + "/disease/symptoms-analyzer", formData)
         .then((success) => {
           setGeminiResponse(success.data.response);
           localStorage.setItem(
