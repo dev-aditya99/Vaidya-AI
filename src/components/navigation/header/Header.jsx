@@ -202,7 +202,7 @@ const Header = () => {
                 <div className="sm:w-[50%] h-full sm:flex hidden">
                   {/* image  */}
                   <img
-                    src={`${backendBaseURL}/images/Hero_sections__doctor-svg_336282 1.svg"`}
+                    src={`${backendBaseURL}/images/Hero_sections__doctor-svg_336282 1.svg`}
                     alt="hero_image"
                     className="min-[915px]:object-contain object-cover object-left drop-shadow-xl"
                   />
