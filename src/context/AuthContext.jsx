@@ -42,7 +42,7 @@ export const AuthContextProvider = ({ children }) => {
 
   // function
   const getLocation = () => {
-    if (navigator.geolocation) {
+    if (navigator.geolocation || "geolocation" in navigator) {
       navigator.geolocation.getCurrentPosition(
         (position) => {
           setGeoLocation({

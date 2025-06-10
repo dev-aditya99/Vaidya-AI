@@ -66,46 +66,34 @@ function App() {
 
               {/* scan disease  */}
               <Route
-                path="/scan-disease"
-                element={
-                  authUser == true ? <Navigate to="/" /> : <ScanDisease />
-                }
+                path="scan-disease"
+                element={authUser ? <ScanDisease /> : <Navigate to="/" />}
               />
 
               {/* show disease  */}
               <Route
-                path="/show-disease-details"
+                path="show-disease-details"
                 element={
-                  authUser == true ? (
-                    <Navigate to="/" />
-                  ) : (
-                    <ShowDiseaseDetails />
-                  )
+                  authUser ? <ShowDiseaseDetails /> : <Navigate to="/" />
                 }
               />
 
               {/* symptoms analyzer  */}
               <Route
-                path="/symptoms-analyzer"
-                element={
-                  authUser == true ? <Navigate to="/" /> : <SymptomsAnalyzer />
-                }
+                path="symptoms-analyzer"
+                element={authUser ? <SymptomsAnalyzer /> : <Navigate to="/" />}
               />
 
               {/* first aid  */}
               <Route
-                path="/find-first-aid"
-                element={
-                  authUser == true ? <Navigate to="/" /> : <FindFirstAid />
-                }
+                path="find-first-aid"
+                element={authUser ? <FindFirstAid /> : <Navigate to="/" />}
               />
 
               {/* show first aid  */}
               <Route
-                path="/show-first-aid"
-                element={
-                  authUser == true ? <Navigate to="/" /> : <ShowFirstAid />
-                }
+                path="show-first-aid"
+                element={authUser ? <ShowFirstAid /> : <Navigate to="/" />}
               />
 
               {/* Catch-all for undefined routes */}
@@ -114,14 +102,14 @@ function App() {
 
             {/* Public routes */}
             <Route
-              path="/login"
+              path="login"
               element={authUser ? <Navigate to="/" /> : <Login />}
             />
             <Route
-              path="/sign-up"
+              path="sign-up"
               element={authUser ? <Navigate to="/" /> : <SignUp />}
             />
-            <Route path="/logout" element={<Logout />} />
+            <Route path="logout" element={<Logout />} />
           </Routes>
         </Suspense>
 
